@@ -5,25 +5,24 @@ import java.awt.Polygon;
 import java.util.Random;
 
 
-public class GameObject {
+public abstract class GameObject {
 	
-	protected Point location;
+	//protected Point location;
 	protected Polygon shape;
 	
 	
 	public GameObject(){
-		super();
-		locate();
+		super();		
 	}
 
-	public Point getLocation() {
-		return location;
-	}
-
-	
-	public void setLocation(Point location) {
-		this.location = location;
-	}
+//	public Point getLocation() {
+//		return location;
+//	}
+//
+//	
+//	public void setLocation(Point location) {
+//		this.location = location;
+//	}
 
 	public Polygon getShape() {
 		return shape;
@@ -33,11 +32,5 @@ public class GameObject {
 		this.shape = shape;
 	}	
 
-	private void locate(){
-		Random r = new Random();
-		
-		int x = (Math.abs(r.nextInt())) % 800;
-		int y = (Math.abs(r.nextInt())) % 600;
-		location = new Point(x, y);
-	}
+	public abstract void locate(String type);
 }
